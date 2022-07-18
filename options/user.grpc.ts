@@ -8,7 +8,7 @@ export const grpcClientOptions: ClientOptions = {
   transport: Transport.GRPC,
   options: {
     url: `${serviceHost}:${servicePort}`,
-    package: 'hello',
-    protoPath: join(__dirname, '..', 'protocols', 'hello.proto'),
+    package: 'user',
+    protoPath: join(__dirname, '..', 'protocols', 'user.proto'),
   },
 };
