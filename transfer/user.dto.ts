@@ -1,0 +1,31 @@
+export interface GetUserById {
+  id: string;
+}
+
+export interface UpdateUser {
+  id: string;
+  description: string;
+  image: string;
+  backgroundImage: string;
+  githubLink: string;
+  clubId: number;
+}
+
+export interface User {
+  id: string;
+  email: string;
+  username: string;
+  department: string;
+  grade: number;
+  class: number;
+  number: number;
+  accountType: number;
+  roleFlag: number;
+  description: string;
+  githubLink: string;
+  image: string;
+  backgroundImage: string;
+  clubId: number;
+  createdDate: Date;
+  updatedDate: Date;
+}

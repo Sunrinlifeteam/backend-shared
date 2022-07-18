@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrapper.proto";
+
+package user;
+
+service UserService {
+    rpc getUserById(GetUserById) returns (User) {}
+    rpc updateUser(UpdateUser) returns (User) {}
+}
+
+message GetUserById {
+    string id = 1;
+}
+
+message UpdateUser {
+    string id = 1;
+    string description = 2;
+    string image = 3;
+    string backgroundImage = 4;
+    string githubLink = 5;
+    int32 clubId = 6;
+}
+
+message User {
+    string id = 1;
+    string email = 2;
+    string username = 3;
+    string department = 4;
+    int32 grade = 5;
+    int32 class = 6;
+    int32 number = 7;
+    int32 accountType = 8;
+    int32 roleFlag = 9;
+    string description = 10;
+    string githubLink = 11;
+    string image = 12;
+    string backgroundImage = 13;
+    int32 clubId = 14;
+    string createdDate = 15;
+    string updatedDate = 16;
+}
