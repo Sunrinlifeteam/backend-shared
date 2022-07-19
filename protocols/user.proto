@@ -6,12 +6,10 @@ import "google/protobuf/wrapper.proto";
 package user;
 
 service UserService {
-    rpc getUserById(GetUserById) returns (User) {}
+    rpc getUserById(google.protobuf.StringValue) returns (User) {}
+    rpc getUserByEmail(google.protobuf.StringValue) returns (User) {}
     rpc updateUser(UpdateUser) returns (User) {}
-}
-
-message GetUserById {
-    string id = 1;
+    rpc setUserRefreshToken(google.protobuf.StringValue, google.protobuf.StringValue) returns (User) {}
 }
 
 message UpdateUser {
@@ -21,6 +19,22 @@ message UpdateUser {
     string backgroundImage = 4;
     string githubLink = 5;
     int32 clubId = 6;
+}
+
+message CreateUser {
+    string email = 1;
+    string username = 2;
+    string department = 3;
+    int32 grade = 4;
+    int32 class = 5;
+    int32 number = 6;
+    int32 accountType = 7;
+    int32 roleFlag = 8;
+    string description = 9;
+    string githubLink = 10;
+    string image = 11;
+    string backgroundImage = 12;
+    int32 clubId = 13;
 }
 
 message User {

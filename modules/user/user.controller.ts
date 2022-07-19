@@ -2,11 +2,8 @@ import { Controller, Get, OnModuleInit, Param } from '@nestjs/common';
 import { Client, ClientGrpc } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
 import { grpcClientOptions } from 'src/shared/options/user.grpc';
-import { GetUserById, User } from 'src/shared/transfer/user.dto';
-
-interface UserService {
-  getUserById(data: GetUserById): Observable<User>;
-}
+import { UserService } from 'src/shared/services/user.service';
+import { User } from 'src/shared/transfer/user.dto';
 
 @Controller('user')
 export class UserController implements OnModuleInit {
@@ -20,7 +17,7 @@ export class UserController implements OnModuleInit {
   @Get('/:id')
   getUserById(@Param('id') id: string): Observable<User> {
     return this.userService.getUserById({
-      id,
+      value: id,
     });
   }
 }

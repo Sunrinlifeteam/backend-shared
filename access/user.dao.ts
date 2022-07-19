@@ -41,16 +41,16 @@ export class UserEntity {
   refreshToken: string;
 
   @Column({ length: 150, nullable: true })
-  description: string;
+  description?: string;
 
   @Column({ length: 200, nullable: true })
-  githubLink: string;
+  githubLink?: string;
 
   @Column({ type: 'mediumtext', nullable: true })
-  image: string;
+  image?: string;
 
   @Column({ type: 'mediumtext', nullable: true })
-  backgroundImage: string;
+  backgroundImage?: string;
 
   //   @ManyToOne(() => ClubInfoEntity, (clubInfo) => clubInfo.users)
   //   @JoinColumn()
