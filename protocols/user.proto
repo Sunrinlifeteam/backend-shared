@@ -9,7 +9,6 @@ service UserService {
     rpc getUserById(google.protobuf.StringValue) returns (User) {}
     rpc getUserByEmail(google.protobuf.StringValue) returns (User) {}
     rpc updateUser(UpdateUser) returns (User) {}
-    rpc setUserRefreshToken(google.protobuf.StringValue, google.protobuf.StringValue) returns (User) {}
 }
 
 message UpdateUser {
