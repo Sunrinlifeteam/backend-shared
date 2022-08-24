@@ -7,7 +7,7 @@ package auth;
 
 service AuthService {
     rpc getRefreshTokenIsValid(IGetRefreshTokenIsValid) returns (google.protobuf.BoolValue) {}
-    rpc getRefreshTokenAndIsNewUserByLogin(IGetRefreshTokenAndIsNewUserByLogin) returns (GetRefreshTokenAndIsNewUserByLoginResponse) {}
+    rpc getRefreshTokenAndIsNewUserByLogin(IGetRefreshTokenAndIsNewUserByLogin) returns (IGetRefreshTokenAndIsNewUserByLoginResponse) {}
 }
 
 message IGetRefreshTokenIsValid {
