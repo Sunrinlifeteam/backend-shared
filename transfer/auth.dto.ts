@@ -13,9 +13,21 @@ export interface IGetRefreshTokenAndIsNewUserByLogin {
   role: number;
 }
 
+export interface IGetAccessToken {
+  userId: string;
+}
+
 export interface IGetRefreshTokenAndIsNewUserByLoginResponse {
   refreshToken: string;
   isNewUser: boolean;
+}
+
+export interface IGetAccessTokenResponse {
+  accessToken: string;
+}
+
+export interface ICreateAccessTokenByUserId {
+  id: string;
 }
 
 export interface IRefreshPayload {
