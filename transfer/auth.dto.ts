@@ -37,3 +37,8 @@ export interface IRefreshPayload {
 export interface IAccessPayload {
   id: string;
 }
+
+export interface IUpdateUserRefreshToken {
+  userId: string;
+  refreshToken: string;
+}
