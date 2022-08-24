@@ -9,6 +9,7 @@ service UserService {
     rpc getUserById(google.protobuf.StringValue) returns (User) {}
     rpc getUserByEmail(google.protobuf.StringValue) returns (User) {}
     rpc updateUser(UpdateUser) returns (User) {}
+    rpc createUser(CreateUser) returns (User) {}
 }
 
 message UpdateUser {
@@ -29,11 +30,11 @@ message CreateUser {
     int32 number = 6;
     int32 accountType = 7;
     int32 roleFlag = 8;
-    string description = 9;
-    string githubLink = 10;
-    string image = 11;
-    string backgroundImage = 12;
-    int32 clubId = 13;
+    optional string description = 9;
+    optional string githubLink = 10;
+    optional string image = 11;
+    optional string backgroundImage = 12;
+    optional int32 clubId = 13;
 }
 
 message User {

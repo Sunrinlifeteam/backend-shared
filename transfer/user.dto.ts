@@ -35,9 +35,9 @@ export interface CreateUser {
   number: number;
   accountType: number;
   roleFlag: number;
-  description: string;
-  githubLink: string;
-  image: string;
-  backgroundImage: string;
-  clubId: number;
+  description?: string;
+  githubLink?: string;
+  image?: string;
+  backgroundImage?: string;
+  clubId?: number;
 }
