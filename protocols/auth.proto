@@ -37,7 +37,7 @@ message IGetAccessToken {
 }
 
 message IGetAccessTokenResponse {
-    string refreshToken = 1;
+    string accessToken = 1;
 }
 
 message ICreateAccessTokenByUserId {
