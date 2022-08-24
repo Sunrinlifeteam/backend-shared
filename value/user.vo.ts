@@ -7,7 +7,7 @@ export interface User {
   class: number;
   number: number;
   accountType: number;
-  roleFlag: number;
+  role: number;
   description: string;
   githubLink: string;
   image: string;

@@ -16,7 +16,7 @@ export interface User {
   class: number;
   number: number;
   accountType: number;
-  roleFlag: number;
+  role: number;
   description: string;
   githubLink: string;
   image: string;
@@ -34,8 +34,8 @@ export interface CreateUser {
   class: number;
   number: number;
   accountType: number;
-  roleFlag: number;
-  description?: string;
+  role: number;
+  description?: string | undefined;
   githubLink?: string;
   image?: string;
   backgroundImage?: string;
