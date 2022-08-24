@@ -9,5 +9,5 @@ export interface UserService {
     id: StringValue,
     refreshToken: StringValue,
   ): Observable<User>;
-  createUser(user: CreateUser): Observable<User>;
+  createUser(user: CreateUser): Promise<User>;
 }
