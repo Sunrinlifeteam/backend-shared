@@ -1,6 +1,6 @@
 import { StringValue } from 'google.protobuf';
 import { Observable } from 'rxjs';
-import { CreateUser, User } from '../transfer/user.dto';
+import { CreateUser, UpdateUser, User } from '../transfer/user.dto';
 
 export interface UserService {
   getUserById(id: StringValue): Observable<User>;
@@ -10,4 +10,5 @@ export interface UserService {
     refreshToken: StringValue,
   ): Observable<User>;
   createUser(user: CreateUser): Observable<User>;
+  updateUser(user: UpdateUser): Observable<User>;
 }
