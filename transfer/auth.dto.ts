@@ -9,6 +9,7 @@ export interface IGetRefreshTokenAndIsNewUserByLogin {
   department: string;
   grade: number;
   class: number;
+  number: number;
   accountType: number;
   role: number;
 }

@@ -8,11 +8,11 @@ export interface User {
   number: number;
   accountType: number;
   role: number;
-  description: string;
-  githubLink: string;
-  image: string;
-  backgroundImage: string;
-  clubId: number;
+  description?: string;
+  githubLink?: string;
+  image?: string;
+  backgroundImage?: string;
+  clubId?: number;
   createdDate: Date;
   updatedDate: Date;
 }
