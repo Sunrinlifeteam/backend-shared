@@ -25,8 +25,9 @@ message IGetRefreshTokenAndIsNewUserByLogin {
     string department = 3;
     int32 grade = 4;
     int32 class = 5;
-    int32 accountType = 6;
-    int32 role = 7;
+    int32 number = 6;
+    int32 accountType = 7;
+    int32 role = 8;
 }
 
 message IGetRefreshTokenAndIsNewUserByLoginResponse {
