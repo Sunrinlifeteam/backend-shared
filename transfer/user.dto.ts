@@ -1,10 +1,23 @@
-export interface UpdateUser {
+import { ApiProperty } from '@nestjs/swagger';
+
+export class UpdateUser {
+  @ApiProperty()
   id: string;
-  description: string;
-  image: string;
-  backgroundImage: string;
-  githubLink: string;
-  clubId: number;
+
+  @ApiProperty({ required: false })
+  description?: string;
+
+  @ApiProperty({ required: false })
+  image?: string;
+
+  @ApiProperty({ required: false })
+  backgroundImage?: string;
+
+  @ApiProperty({ required: false })
+  githubLink?: string;
+
+  @ApiProperty({ required: false })
+  clubId?: number;
 }
 
 export interface User {
