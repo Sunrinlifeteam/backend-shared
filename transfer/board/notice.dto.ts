@@ -1,3 +1,5 @@
+import { ApiProperty } from '@nestjs/swagger';
+
 export class Notice {
   id: number;
   type: 'school' | 'intranet';
@@ -24,9 +26,16 @@ export class GetNoticeRequest {
 }
 
 export class PartialNotice {
-  type?: string;
-  title?: string;
-  content?: string;
+  @ApiProperty({ enum: ['school', 'intranet'] })
+  type: 'school' | 'intranet';
+
+  @ApiProperty()
+  title: string;
+
+  @ApiProperty()
+  content: string;
+
+  @ApiProperty({ required: false })
   attachments?: string[];
 }
 
