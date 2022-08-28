@@ -26,6 +26,13 @@ export class GetNoticeRequest {
 }
 
 export class PartialNotice {
+  type: 'school' | 'intranet';
+  title: string;
+  content: string;
+  attachments?: string[];
+}
+
+export class PartialNoticeForCreate implements PartialNotice {
   @ApiProperty({ enum: ['school', 'intranet'] })
   type: 'school' | 'intranet';
 
@@ -39,11 +46,22 @@ export class PartialNotice {
   attachments?: string[];
 }
 
-export class UpdateNoticeRequest {
-  @ApiProperty()
-  id: number;
+export class PartialNoticeForUpdate implements PartialNotice {
+  @ApiProperty({ enum: ['school', 'intranet'], required: false })
+  type: 'school' | 'intranet';
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  title: string;
+
+  @ApiProperty({ required: false })
+  content: string;
+
+  @ApiProperty({ required: false })
+  attachments?: string[];
+}
+
+export class UpdateNoticeRequest {
+  id: number;
   notice: PartialNotice;
 }
 
