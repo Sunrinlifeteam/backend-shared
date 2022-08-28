@@ -11,7 +11,7 @@ export class Notice {
 export class GetNoticeListRequest {
   search: string;
   page: number;
-  per_page: number;
+  page_size: number;
 }
 
 export class GetNoticeListResponse {
