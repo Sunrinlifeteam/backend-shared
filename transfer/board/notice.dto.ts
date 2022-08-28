@@ -3,19 +3,19 @@ export class Notice {
   type: 'school' | 'intranet';
   title: string;
   content: string;
-  created_at: Date;
-  updated_at: Date;
+  createdAt: Date;
+  updatedAt: Date;
   attachments: string[];
 }
 
 export class GetNoticeListRequest {
   search: string;
   page: number;
-  page_size: number;
+  pageSize: number;
 }
 
 export class GetNoticeListResponse {
-  total_count: number;
+  totalCount: number;
   notice: Notice[];
 }
 
