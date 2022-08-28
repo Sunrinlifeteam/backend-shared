@@ -10,6 +10,6 @@ service NoticeService {
     rpc getNoticeList(GetNoticeListRequest) returns (GetNoticeListResponse) {}
     rpc getNotice(GetNoticeRequest) returns (Notice) {}
     rpc createNotice(PartialNotice) returns (Notice) {}
-    rpc updateNotice(PartialNotice) returns (google.protobuf.Empty) {}
+    rpc updateNotice(UpdateNoticeRequest) returns (google.protobuf.Empty) {}
     rpc deleteNotice(DeleteNoticeRequest) returns (google.protobuf.Empty) {}
 }

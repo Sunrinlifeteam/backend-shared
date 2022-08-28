@@ -7,6 +7,7 @@ import {
   GetNoticeRequest,
   Notice,
   PartialNotice,
+  UpdateNoticeRequest,
 } from '../transfer/board/notice.dto';
 
 export interface NoticeService {
@@ -15,6 +16,6 @@ export interface NoticeService {
   ): Observable<GetNoticeListResponse>;
   getNotice(payload: GetNoticeRequest): Observable<Notice>;
   createNotice(payload: PartialNotice): Observable<Notice>;
-  updateNotice(payload: PartialNotice): Observable<Empty>;
+  updateNotice(payload: UpdateNoticeRequest): Observable<Empty>;
   deleteNotice(payload: DeleteNoticeRequest): Observable<Empty>;
 }

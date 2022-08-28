@@ -37,6 +37,11 @@ message PartialNotice {
     repeated string attachments = 4;
 }
 
+message UpdateNoticeRequest {
+    string id = 1;
+    PartialNotice notice = 2;
+}
+
 message DeleteNoticeRequest {
     string id = 1;
 }

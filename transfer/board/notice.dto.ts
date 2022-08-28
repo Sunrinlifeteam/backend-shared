@@ -39,6 +39,37 @@ export class PartialNotice {
   attachments?: string[];
 }
 
+export class UpdateNoticeRequest {
+  @ApiProperty()
+  id: number;
+
+  @ApiProperty()
+  notice: PartialNotice;
+}
+
 export class DeleteNoticeRequest {
   id: number;
+}
+
+export class SearchQuery {
+  @ApiProperty({
+    name: 'query',
+    required: false,
+    type: String,
+  })
+  search? = null;
+
+  @ApiProperty({
+    name: 'page',
+    required: false,
+    type: Number,
+  })
+  page? = 1;
+
+  @ApiProperty({
+    name: 'page_size',
+    required: false,
+    type: Number,
+  })
+  pageSize? = 25;
 }
