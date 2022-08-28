@@ -1,3 +1,4 @@
+import { Empty } from 'google.protobuf';
 import { Observable } from 'rxjs';
 import {
   DeleteNoticeRequest,
@@ -14,6 +15,6 @@ export interface NoticeService {
   ): Observable<GetNoticeListResponse>;
   getNotice(payload: GetNoticeRequest): Observable<Notice>;
   createNotice(payload: PartialNotice): Observable<Notice>;
-  updateNotice(payload: PartialNotice): Observable<void>;
-  deleteNotice(payload: DeleteNoticeRequest): Observable<void>;
+  updateNotice(payload: PartialNotice): Observable<Empty>;
+  deleteNotice(payload: DeleteNoticeRequest): Observable<Empty>;
 }
