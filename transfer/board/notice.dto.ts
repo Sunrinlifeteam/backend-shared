@@ -71,21 +71,18 @@ export class DeleteNoticeRequest {
 
 export class SearchQuery {
   @ApiProperty({
-    name: 'query',
     required: false,
     type: String,
   })
   search? = null;
 
   @ApiProperty({
-    name: 'page',
     required: false,
     type: Number,
   })
   page? = 1;
 
   @ApiProperty({
-    name: 'page_size',
     required: false,
     type: Number,
   })
