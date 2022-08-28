@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import {
   DeleteNoticeRequest,
   GetNoticeListRequest,
@@ -8,9 +9,11 @@ import {
 } from '../transfer/board/notice.dto';
 
 export interface NoticeService {
-  getNoticeList(payload: GetNoticeListRequest): Promise<GetNoticeListResponse>;
-  getNotice(payload: GetNoticeRequest): Promise<Notice>;
-  createNotice(payload: PartialNotice): Promise<Notice>;
-  updateNotice(payload: PartialNotice): Promise<void>;
-  deleteNotice(payload: DeleteNoticeRequest): Promise<void>;
+  getNoticeList(
+    payload: GetNoticeListRequest,
+  ): Observable<GetNoticeListResponse>;
+  getNotice(payload: GetNoticeRequest): Observable<Notice>;
+  createNotice(payload: PartialNotice): Observable<Notice>;
+  updateNotice(payload: PartialNotice): Observable<void>;
+  deleteNotice(payload: DeleteNoticeRequest): Observable<void>;
 }
