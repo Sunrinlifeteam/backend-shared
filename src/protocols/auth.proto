@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "./user.proto";
+
+package auth;
+
+service AuthService {
+    rpc createAccessTokenByUserId(ICreateAccessTokenByUserId) returns (google.protobuf.StringValue) {}
+    rpc accessValidate(IAccessPayload) returns (User) {}
+    rpc getAccessToken(IGetAccessToken) returns (IGetAccessTokenResponse) {}
+    rpc getRefreshTokenIsValid(IGetRefreshTokenIsValid) returns (google.protobuf.BoolValue) {}
+    rpc getRefreshTokenAndIsNewUserByLogin(IGetRefreshTokenAndIsNewUserByLogin) returns (IGetRefreshTokenAndIsNewUserByLoginResponse) {}
+}
+
+message IGetRefreshTokenIsValid {
+    string refreshToken = 1;
+    string userId = 2;
+}
+
+message IGetRefreshTokenAndIsNewUserByLogin {
+    string email = 1;
+    string username = 2;
+    string department = 3;
+    int32 grade = 4;
+    int32 class = 5;
+    int32 number = 6;
+    int32 accountType = 7;
+    int32 role = 8;
+}
+
+message IGetRefreshTokenAndIsNewUserByLoginResponse {
+    string refreshToken = 1;
+    bool isNewUser = 2;
+}
+
+message IAccessPayload {
+    string id = 1;
+}
+
+message IGetAccessToken {
+    string userId = 1;
+}
+
+message IGetAccessTokenResponse {
+    string accessToken = 1;
+}
+
+message ICreateAccessTokenByUserId {
+    string id = 1;
+}

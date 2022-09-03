@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "./board/notice.proto";
+
+package board;
+
+service NoticeService {
+    rpc getNoticeList(GetNoticeListRequest) returns (GetNoticeListResponse) {}
+    rpc getNotice(GetNoticeRequest) returns (Notice) {}
+    rpc createNotice(PartialNotice) returns (Notice) {}
+    rpc updateNotice(UpdateNoticeRequest) returns (google.protobuf.Empty) {}
+    rpc deleteNotice(DeleteNoticeRequest) returns (google.protobuf.Empty) {}
+}
