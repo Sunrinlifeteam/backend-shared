@@ -2,13 +2,13 @@ syntax = "proto3";
 
 import "google/protobuf/empty.proto";
 import "google/protobuf/wrappers.proto";
-import "./user.proto";
+import "user.proto";
 
 package auth;
 
 service AuthService {
     rpc createAccessTokenByUserId(ICreateAccessTokenByUserId) returns (google.protobuf.StringValue) {}
-    rpc accessValidate(IAccessPayload) returns (User) {}
+    rpc accessValidate(IAccessPayload) returns (user.User) {}
     rpc getAccessToken(IGetAccessToken) returns (IGetAccessTokenResponse) {}
     rpc getRefreshTokenIsValid(IGetRefreshTokenIsValid) returns (google.protobuf.BoolValue) {}
     rpc getRefreshTokenAndIsNewUserByLogin(IGetRefreshTokenAndIsNewUserByLogin) returns (IGetRefreshTokenAndIsNewUserByLoginResponse) {}

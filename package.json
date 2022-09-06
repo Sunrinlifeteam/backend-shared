@@ -17,7 +17,10 @@
     "url": "git+https://github.com/2022-WHO-ARE-WE/cling-server.git"
   },
   "scripts": {
-    "build": "tsc -b && copyfiles --up 1 src/protocols/**/* lib"
+    "build": "rimraf ./lib && npm run build:proto && npm run build:tsc && npm run build:copy",
+    "build:tsc": "tsc -b",
+    "build:copy": "copyfiles --up 1 src/protocols/**/* lib",
+    "build:proto": "protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto.cmd --ts_proto_opt=nestJs=true --ts_proto_out=./src/generated -I ./src/protocols ./src/protocols/*.proto"
   },
   "bugs": {
     "url": "https://github.com/2022-WHO-ARE-WE/cling-server/issues"
@@ -26,6 +29,8 @@
     "google": "^2.1.0"
   },
   "devDependencies": {
-    "copyfiles": "^2.4.1"
+    "copyfiles": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "ts-proto": "^1.125.0"
   }
 }

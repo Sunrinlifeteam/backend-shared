@@ -1,0 +1,1 @@
+protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto.cmd --ts_proto_opt=nestJs=true --ts_proto_out=./src/generated -I ./src/protocols ./src/protocols/*.proto
